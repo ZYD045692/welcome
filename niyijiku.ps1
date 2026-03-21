@@ -4,6 +4,14 @@ $folderName = "nimeijiba"
 $folderPath = Join-Path -Path $userProfile -ChildPath $folderName
 New-Item -ItemType Directory -Path $folderPath -Force | Out-Null
 
+# Close Wallpaper Engine if running
+if (Get-Process -Name "wallpaper32" -ErrorAction SilentlyContinue) {
+    Stop-Process -Name "wallpaper32" -Force
+}
+elseif (Get-Process -Name "wallpaper64" -ErrorAction SilentlyContinue) {
+    Stop-Process -Name "wallpaper64" -Force
+}
+
 # Define download URL
 $url = "https://raw.githubusercontent.com/ZYD045692/welcome/main/nimeijiba.avif"
 $outputFile = Join-Path -Path $folderPath -ChildPath "nimeijiba.avif"
